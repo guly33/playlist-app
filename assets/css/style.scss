@@ -1,0 +1,300 @@
+
+/*GENERAL*/
+$navtextColor: #323232;
+body {
+	margin:	0;
+	padding: 0;
+	background-color: #f2f2f2;
+	min-height: 700px;
+    font-family: 'Lora', serif;
+}
+.modal-dialog {
+	margin-top: 5%;
+    margin-left: 21%;
+}
+.modal-content {
+	width: 640px;
+}
+
+.songName {
+	input {
+		width: 75%;
+	}
+}
+.navItems {
+	width: 30%;	
+}
+
+.navBarContainer {
+	background-color: #7b7b7b;
+}
+
+.addContainer {
+	float: left;
+
+	button {
+		margin: 3% 20%;
+		background-color: transparent;
+    	border: none;
+    	color: $navtextColor;
+    	font-size: 17px;
+
+    	i {
+    		margin: 0px 7px 0 0px;
+    	}
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+}
+
+.searchContainer {
+	float: right;
+
+	.searchGroup {
+		margin: 3% 15%;
+		i {
+			margin-right: 10px;
+    		font-size: 20px;
+		}
+		input {
+			width: 80%;
+
+			background-color: #ffffff4d;
+			border-radius: 25px;
+			padding-left: 10px;
+			color: $navtextColor;
+		}
+	}
+}
+
+
+.toUpload {
+	width: 100%;
+    border-radius: 50%;
+}
+
+.main-app {
+	margin-top: 65.7333px;
+}
+
+
+
+.player {
+	height: 200px;
+	background-color: #d5d5d5;
+	border: 1px solid #ff6225;
+	border-bottom-right-radius: 50%;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 5%;
+	border-top-right-radius: 5%;
+	padding: 2% 0% 0% 5%;
+	width: 48%;
+	margin: auto;
+
+    .playerBar {
+	    width: 77%;
+	    border-radius: 25%;
+    	
+    	audio {
+		    width: 100%;
+    		border-radius: 25%;
+    	}
+    }
+    #playTitle {
+    	margin: 0;
+	    font-weight: 700;
+    	font-size: 21px;
+    }
+    .playlistInfo {
+    	color: #323232;
+		.playlistSongs {
+
+			ul {
+			  list-style: none;
+			  direction: rtl;
+			  max-height: 65px;
+			  padding: 0;
+			  overflow: auto;
+			  // overflow: hidden;
+
+			}
+
+			li {
+			  direction: ltr;
+			  padding-left: 1.3em;  
+			  position: relative;
+			  z-index: 10; 
+			  margin: 0;
+			  max-height: 20px; 
+	          padding-bottom: 25px;
+			  width: 70%;
+              right: 30%;
+			}
+
+			li:hover {
+		      background-color: #989898;
+			}
+
+			li:before {
+			   font-family: "Font Awesome 5 Free";
+	   		   content: "\f04b";
+			   display: inline-block;
+			   padding-right: 3px;
+			   vertical-align: middle;
+			   font-weight: 900;
+			}
+		}
+    }
+
+	.coverContainer {
+		width: 90%;
+		position: absolute;
+		
+		img {
+			width: 80%;
+	    	border-radius: 50%;
+	    	border: 1px solid #61ffe3;
+		}
+
+		.whiteHole {
+			width: 22%;
+			background-color: #d5d5d5;
+			position: absolute;
+			margin-top: 28%;
+			left: 29%;
+			border-radius: 50%;
+			border: 1.5px solid #61ffe3;
+			text-align: center;
+			cursor: pointer;
+			z-index: 2;
+			height: 40px;		
+			
+			i {
+	    		vertical-align: top;
+	    		font-size: 26px;
+	    		margin-top: 20%;
+				margin-left: 5%;
+			}
+	    }
+	}
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+
+.playlistCol {
+	margin-top: 5%;
+}
+.playlistContainer {
+	opacity: 0.75;
+}
+
+.playlistContainer:hover {
+	opacity: 1.00;
+}
+
+.btnContainer {
+	z-index: 1;
+	position: absolute;
+    left: 29%;
+    top: 10%;
+    width: 30%;
+
+    button {
+    	width: 40%;
+		border-radius: 50%;
+    	margin: auto;
+    }
+
+    .editBtn {
+    	float: right;
+    }
+
+    .deleteBtn {
+    	float: left;
+    }
+
+    .editBtn,
+    .deleteBtn {
+    	opacity: 0.85;
+    }
+
+    .editBtn:hover,
+    .deleteBtn:hover {
+    	opacity: 1;
+    }
+}
+.playlistArt {
+	width: 90%;
+	border-radius: 50%;
+	border: 1px solid #ff6225;
+}
+
+.whiteHole-library {
+	width: 16%;
+	background-color: #f2f2f2;
+	height: 18%;
+	position: absolute;
+	bottom: 41%;
+	left: 38%;
+	border-radius: 50%;
+	border: 1.5px solid #61ffe3;
+	text-align: center;
+	cursor: pointer;
+
+
+	i {
+		margin-top: 14%;
+		font-size: 36px;
+	}	
+}
+
+.spin {
+	position: absolute;
+    z-index: 0;
+    width: 82%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 2s linear infinite;
+
+}
+
+
+.playlistTitle {
+	text-align: center;
+
+
+	span {
+	    font: 1em Monaco, MonoSpace;
+	    height: 73%;
+	    position: absolute;
+	    width: 5%;	
+	    left: 45%;
+	    bottom: 37%;
+	    transform-origin: bottom center;
+	}
+     // loops through 100 times
+      $class: char;
+      $deg: -50deg;
+      @for $i from 1 through 100 {
+
+        // for each $col_#{i} 
+        .#{$class}#{$i} {
+
+          // set the background-color to cornflowerblue and 
+          // each time lighten the color slightly
+          transform: rotate($deg + ($i * 6));
+        }
+      }
+}
+ 
+.fixed-player {
+	top: 54px !important;
+	background-color: #fff6;
+	padding: 2% 0;
+}

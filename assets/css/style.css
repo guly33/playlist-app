@@ -1,0 +1,566 @@
+@charset "UTF-8";
+/*GENERAL*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  min-height: 700px;
+  font-family: "Lora", serif;
+}
+
+.modal-dialog {
+  margin-top: 5%;
+  margin-left: 21%;
+}
+
+.modal-content {
+  width: 640px;
+}
+
+.songName input {
+  width: 75%;
+}
+
+.navItems {
+  width: 30%;
+}
+
+.navBarContainer {
+  background-color: #7b7b7b;
+}
+
+.addContainer {
+  float: left;
+}
+.addContainer button {
+  margin: 3% 20%;
+  background-color: transparent;
+  border: none;
+  color: #323232;
+  font-size: 17px;
+}
+.addContainer button i {
+  margin: 0px 7px 0 0px;
+}
+.addContainer button:hover {
+  cursor: pointer;
+}
+
+.searchContainer {
+  float: right;
+}
+.searchContainer .searchGroup {
+  margin: 3% 15%;
+}
+.searchContainer .searchGroup i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.searchContainer .searchGroup input {
+  width: 80%;
+  background-color: #ffffff4d;
+  border-radius: 25px;
+  padding-left: 10px;
+  color: #323232;
+}
+
+.toUpload {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.main-app {
+  margin-top: 65.7333px;
+}
+
+.player {
+  height: 200px;
+  background-color: #d5d5d5;
+  border: 1px solid #ff6225;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 5%;
+  border-top-right-radius: 5%;
+  padding: 2% 0% 0% 5%;
+  width: 48%;
+  margin: auto;
+}
+.player .playerBar {
+  width: 77%;
+  border-radius: 25%;
+}
+.player .playerBar audio {
+  width: 100%;
+  border-radius: 25%;
+}
+.player #playTitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 21px;
+}
+.player .playlistInfo {
+  color: #323232;
+}
+.player .playlistInfo .playlistSongs ul {
+  list-style: none;
+  direction: rtl;
+  max-height: 65px;
+  padding: 0;
+  overflow: auto;
+}
+.player .playlistInfo .playlistSongs li {
+  direction: ltr;
+  padding-left: 1.3em;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  max-height: 20px;
+  padding-bottom: 25px;
+  width: 70%;
+  right: 30%;
+}
+.player .playlistInfo .playlistSongs li:hover {
+  background-color: #989898;
+}
+.player .playlistInfo .playlistSongs li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+}
+.player .coverContainer {
+  width: 90%;
+  position: absolute;
+}
+.player .coverContainer img {
+  width: 80%;
+  border-radius: 50%;
+  border: 1px solid #61ffe3;
+}
+.player .coverContainer .whiteHole {
+  width: 22%;
+  background-color: #d5d5d5;
+  position: absolute;
+  margin-top: 28%;
+  left: 29%;
+  border-radius: 50%;
+  border: 1.5px solid #61ffe3;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  height: 40px;
+}
+.player .coverContainer .whiteHole i {
+  vertical-align: top;
+  font-size: 26px;
+  margin-top: 20%;
+  margin-left: 5%;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.playlistCol {
+  margin-top: 5%;
+}
+
+.playlistContainer {
+  opacity: 0.75;
+}
+
+.playlistContainer:hover {
+  opacity: 1;
+}
+
+.btnContainer {
+  z-index: 1;
+  position: absolute;
+  left: 29%;
+  top: 10%;
+  width: 30%;
+}
+.btnContainer button {
+  width: 40%;
+  border-radius: 50%;
+  margin: auto;
+}
+.btnContainer .editBtn {
+  float: right;
+}
+.btnContainer .deleteBtn {
+  float: left;
+}
+.btnContainer .editBtn,
+.btnContainer .deleteBtn {
+  opacity: 0.85;
+}
+.btnContainer .editBtn:hover,
+.btnContainer .deleteBtn:hover {
+  opacity: 1;
+}
+
+.playlistArt {
+  width: 90%;
+  border-radius: 50%;
+  border: 1px solid #ff6225;
+}
+
+.whiteHole-library {
+  width: 16%;
+  background-color: #f2f2f2;
+  height: 18%;
+  position: absolute;
+  bottom: 41%;
+  left: 38%;
+  border-radius: 50%;
+  border: 1.5px solid #61ffe3;
+  text-align: center;
+  cursor: pointer;
+}
+.whiteHole-library i {
+  margin-top: 14%;
+  font-size: 36px;
+}
+
+.spin {
+  position: absolute;
+  z-index: 0;
+  width: 82%;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.playlistTitle {
+  text-align: center;
+}
+.playlistTitle span {
+  font: 1em Monaco, MonoSpace;
+  height: 73%;
+  position: absolute;
+  width: 5%;
+  left: 45%;
+  bottom: 37%;
+  transform-origin: bottom center;
+}
+.playlistTitle .char1 {
+  transform: rotate(-44deg);
+}
+.playlistTitle .char2 {
+  transform: rotate(-38deg);
+}
+.playlistTitle .char3 {
+  transform: rotate(-32deg);
+}
+.playlistTitle .char4 {
+  transform: rotate(-26deg);
+}
+.playlistTitle .char5 {
+  transform: rotate(-20deg);
+}
+.playlistTitle .char6 {
+  transform: rotate(-14deg);
+}
+.playlistTitle .char7 {
+  transform: rotate(-8deg);
+}
+.playlistTitle .char8 {
+  transform: rotate(-2deg);
+}
+.playlistTitle .char9 {
+  transform: rotate(4deg);
+}
+.playlistTitle .char10 {
+  transform: rotate(10deg);
+}
+.playlistTitle .char11 {
+  transform: rotate(16deg);
+}
+.playlistTitle .char12 {
+  transform: rotate(22deg);
+}
+.playlistTitle .char13 {
+  transform: rotate(28deg);
+}
+.playlistTitle .char14 {
+  transform: rotate(34deg);
+}
+.playlistTitle .char15 {
+  transform: rotate(40deg);
+}
+.playlistTitle .char16 {
+  transform: rotate(46deg);
+}
+.playlistTitle .char17 {
+  transform: rotate(52deg);
+}
+.playlistTitle .char18 {
+  transform: rotate(58deg);
+}
+.playlistTitle .char19 {
+  transform: rotate(64deg);
+}
+.playlistTitle .char20 {
+  transform: rotate(70deg);
+}
+.playlistTitle .char21 {
+  transform: rotate(76deg);
+}
+.playlistTitle .char22 {
+  transform: rotate(82deg);
+}
+.playlistTitle .char23 {
+  transform: rotate(88deg);
+}
+.playlistTitle .char24 {
+  transform: rotate(94deg);
+}
+.playlistTitle .char25 {
+  transform: rotate(100deg);
+}
+.playlistTitle .char26 {
+  transform: rotate(106deg);
+}
+.playlistTitle .char27 {
+  transform: rotate(112deg);
+}
+.playlistTitle .char28 {
+  transform: rotate(118deg);
+}
+.playlistTitle .char29 {
+  transform: rotate(124deg);
+}
+.playlistTitle .char30 {
+  transform: rotate(130deg);
+}
+.playlistTitle .char31 {
+  transform: rotate(136deg);
+}
+.playlistTitle .char32 {
+  transform: rotate(142deg);
+}
+.playlistTitle .char33 {
+  transform: rotate(148deg);
+}
+.playlistTitle .char34 {
+  transform: rotate(154deg);
+}
+.playlistTitle .char35 {
+  transform: rotate(160deg);
+}
+.playlistTitle .char36 {
+  transform: rotate(166deg);
+}
+.playlistTitle .char37 {
+  transform: rotate(172deg);
+}
+.playlistTitle .char38 {
+  transform: rotate(178deg);
+}
+.playlistTitle .char39 {
+  transform: rotate(184deg);
+}
+.playlistTitle .char40 {
+  transform: rotate(190deg);
+}
+.playlistTitle .char41 {
+  transform: rotate(196deg);
+}
+.playlistTitle .char42 {
+  transform: rotate(202deg);
+}
+.playlistTitle .char43 {
+  transform: rotate(208deg);
+}
+.playlistTitle .char44 {
+  transform: rotate(214deg);
+}
+.playlistTitle .char45 {
+  transform: rotate(220deg);
+}
+.playlistTitle .char46 {
+  transform: rotate(226deg);
+}
+.playlistTitle .char47 {
+  transform: rotate(232deg);
+}
+.playlistTitle .char48 {
+  transform: rotate(238deg);
+}
+.playlistTitle .char49 {
+  transform: rotate(244deg);
+}
+.playlistTitle .char50 {
+  transform: rotate(250deg);
+}
+.playlistTitle .char51 {
+  transform: rotate(256deg);
+}
+.playlistTitle .char52 {
+  transform: rotate(262deg);
+}
+.playlistTitle .char53 {
+  transform: rotate(268deg);
+}
+.playlistTitle .char54 {
+  transform: rotate(274deg);
+}
+.playlistTitle .char55 {
+  transform: rotate(280deg);
+}
+.playlistTitle .char56 {
+  transform: rotate(286deg);
+}
+.playlistTitle .char57 {
+  transform: rotate(292deg);
+}
+.playlistTitle .char58 {
+  transform: rotate(298deg);
+}
+.playlistTitle .char59 {
+  transform: rotate(304deg);
+}
+.playlistTitle .char60 {
+  transform: rotate(310deg);
+}
+.playlistTitle .char61 {
+  transform: rotate(316deg);
+}
+.playlistTitle .char62 {
+  transform: rotate(322deg);
+}
+.playlistTitle .char63 {
+  transform: rotate(328deg);
+}
+.playlistTitle .char64 {
+  transform: rotate(334deg);
+}
+.playlistTitle .char65 {
+  transform: rotate(340deg);
+}
+.playlistTitle .char66 {
+  transform: rotate(346deg);
+}
+.playlistTitle .char67 {
+  transform: rotate(352deg);
+}
+.playlistTitle .char68 {
+  transform: rotate(358deg);
+}
+.playlistTitle .char69 {
+  transform: rotate(364deg);
+}
+.playlistTitle .char70 {
+  transform: rotate(370deg);
+}
+.playlistTitle .char71 {
+  transform: rotate(376deg);
+}
+.playlistTitle .char72 {
+  transform: rotate(382deg);
+}
+.playlistTitle .char73 {
+  transform: rotate(388deg);
+}
+.playlistTitle .char74 {
+  transform: rotate(394deg);
+}
+.playlistTitle .char75 {
+  transform: rotate(400deg);
+}
+.playlistTitle .char76 {
+  transform: rotate(406deg);
+}
+.playlistTitle .char77 {
+  transform: rotate(412deg);
+}
+.playlistTitle .char78 {
+  transform: rotate(418deg);
+}
+.playlistTitle .char79 {
+  transform: rotate(424deg);
+}
+.playlistTitle .char80 {
+  transform: rotate(430deg);
+}
+.playlistTitle .char81 {
+  transform: rotate(436deg);
+}
+.playlistTitle .char82 {
+  transform: rotate(442deg);
+}
+.playlistTitle .char83 {
+  transform: rotate(448deg);
+}
+.playlistTitle .char84 {
+  transform: rotate(454deg);
+}
+.playlistTitle .char85 {
+  transform: rotate(460deg);
+}
+.playlistTitle .char86 {
+  transform: rotate(466deg);
+}
+.playlistTitle .char87 {
+  transform: rotate(472deg);
+}
+.playlistTitle .char88 {
+  transform: rotate(478deg);
+}
+.playlistTitle .char89 {
+  transform: rotate(484deg);
+}
+.playlistTitle .char90 {
+  transform: rotate(490deg);
+}
+.playlistTitle .char91 {
+  transform: rotate(496deg);
+}
+.playlistTitle .char92 {
+  transform: rotate(502deg);
+}
+.playlistTitle .char93 {
+  transform: rotate(508deg);
+}
+.playlistTitle .char94 {
+  transform: rotate(514deg);
+}
+.playlistTitle .char95 {
+  transform: rotate(520deg);
+}
+.playlistTitle .char96 {
+  transform: rotate(526deg);
+}
+.playlistTitle .char97 {
+  transform: rotate(532deg);
+}
+.playlistTitle .char98 {
+  transform: rotate(538deg);
+}
+.playlistTitle .char99 {
+  transform: rotate(544deg);
+}
+.playlistTitle .char100 {
+  transform: rotate(550deg);
+}
+
+.fixed-player {
+  top: 54px !important;
+  background-color: #fff6;
+  padding: 2% 0;
+}

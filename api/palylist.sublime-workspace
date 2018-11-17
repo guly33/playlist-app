@@ -1,0 +1,1166 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"track",
+				"trackLi"
+			],
+			[
+				"text",
+				"textContent\t: DOMString Node"
+			],
+			[
+				"pl",
+				"playId"
+			],
+			[
+				"lib",
+				"library"
+			],
+			[
+				"bor",
+				"border-bottom-right-radius\tproperty"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"dele",
+				"deleteIcon"
+			],
+			[
+				"btn",
+				"btnContainer"
+			],
+			[
+				"pla",
+				"playlistContainer"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"app",
+				"appendChild\t( node: Node ): Node Node"
+			],
+			[
+				"creat",
+				"createElement\t( localName: DOMString ): Element Document"
+			],
+			[
+				"d",
+				"document\t: Document Window"
+			],
+			[
+				"crea",
+				"createElement\t( localName: DOMString ): Element Document"
+			],
+			[
+				"clearI",
+				"clearInput"
+			],
+			[
+				"J",
+				"JSON_parse\t( json: string ): any JSON"
+			],
+			[
+				"li",
+				"library"
+			],
+			[
+				"toU",
+				"toUpload"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"fil",
+				"files\t: FileList DataTransfer"
+			],
+			[
+				"fun",
+				"fun\tFunction"
+			],
+			[
+				"le",
+				"length\t: int Array"
+			],
+			[
+				"fu",
+				"function_without_name"
+			],
+			[
+				"tracks",
+				"tracksUrls"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"O",
+				"Object\t( value?: any ): Object Object"
+			],
+			[
+				"getE",
+				"getElementsByName\t( elementName: DOMString ): NodeList Document"
+			],
+			[
+				"phas",
+				"phase-1"
+			],
+			[
+				"url",
+				"urlCol"
+			],
+			[
+				"ur",
+				"urlLabel"
+			],
+			[
+				"set",
+				"setAttribute\t( name: DOMString, value: DOMString ): void Element"
+			],
+			[
+				"song",
+				"songUrl"
+			],
+			[
+				"name",
+				"nameCol"
+			],
+			[
+				"form-c",
+				"form-control \tBootstrap 4 Class"
+			],
+			[
+				"c",
+				"cursor\tproperty"
+			],
+			[
+				"fo",
+				"form-group \tBootstrap 4 Class"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"fi",
+				"fixed-top \tBootstrap 4 Class"
+			],
+			[
+				"ng",
+				"ngFor\tAngular 2 ngFor Snippet"
+			],
+			[
+				"se",
+				"serverId\tproperty"
+			],
+			[
+				"ser",
+				"serverName\tproperty"
+			],
+			[
+				"re",
+				"ret\treturn statement"
+			],
+			[
+				"bacgroc",
+				"backgroundColor\t = 'initial' Style CSS"
+			],
+			[
+				"user",
+				"user\tproperty"
+			],
+			[
+				"fl",
+				"filter\tmethod"
+			],
+			[
+				"to",
+				"toAdd\tproperty"
+			],
+			[
+				"t",
+				"toAdd\tproperty"
+			],
+			[
+				"ti",
+				"this\tkeyword"
+			],
+			[
+				"top",
+				"toping\tparameter"
+			],
+			[
+				"th",
+				"this\tkeyword"
+			],
+			[
+				"fa",
+				"false\tkeyword"
+			],
+			[
+				"ro",
+				"row \tBootstrap 4 Class"
+			],
+			[
+				"nu",
+				"number\tkeyword"
+			],
+			[
+				"M",
+				"Math\tconst"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"nam",
+				"namesArr\tproperty"
+			],
+			[
+				"con",
+				"console\tvar"
+			],
+			[
+				"p",
+				"push\tmethod"
+			],
+			[
+				"i",
+				"index"
+			],
+			[
+				"ar",
+				"artical\tparameter"
+			],
+			[
+				"impo",
+				"import\tkeyword"
+			],
+			[
+				"a",
+				"Array\tconst"
+			],
+			[
+				"yea",
+				"years"
+			],
+			[
+				"la",
+				"lastName"
+			],
+			[
+				"fir",
+				"firstName"
+			],
+			[
+				"bi",
+				"birthYear"
+			],
+			[
+				"pro",
+				"prompt\t( message?: DOMString, default?: DOMString ): DOMString Window"
+			],
+			[
+				"parse",
+				"parseInt\t( s: string, radix: int ): int Global"
+			],
+			[
+				"qu",
+				"question"
+			],
+			[
+				"star",
+				"startsWith"
+			],
+			[
+				"include",
+				"includes"
+			],
+			[
+				"stra",
+				"startN"
+			],
+			[
+				"btn-d",
+				"btn-outline-danger \tBootstrap 4 Class"
+			],
+			[
+				"hi",
+				"hide"
+			],
+			[
+				"pass",
+				"Password"
+			],
+			[
+				"gete",
+				"getElementsByTagName\t( localName: DOMString ): HTMLCollection Element"
+			],
+			[
+				"comm",
+				"commets"
+			],
+			[
+				"pho",
+				"phone"
+			],
+			[
+				"User",
+				"user"
+			],
+			[
+				"us",
+				"usersArr"
+			],
+			[
+				"getS",
+				"getStudentInfo"
+			],
+			[
+				"role",
+				"roleSelect"
+			],
+			[
+				"co",
+				"col-9 \tBootstrap 4 Class"
+			],
+			[
+				"stud",
+				"studentCourse"
+			],
+			[
+				"studen",
+				"studentCourse"
+			],
+			[
+				"erro",
+				"error"
+			],
+			[
+				"err",
+				"errorArr"
+			],
+			[
+				"phon",
+				"phoneToCheck"
+			],
+			[
+				"patt",
+				"pattLocal"
+			],
+			[
+				"mai",
+				"mailToCheck"
+			],
+			[
+				"cou",
+				"courseArr"
+			],
+			[
+				"l",
+				"length\t: unsigned long Storage"
+			],
+			[
+				"cours",
+				"courseArr"
+			],
+			[
+				"dta",
+				"data"
+			],
+			[
+				"respon",
+				"response"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"un",
+				"unbind"
+			],
+			[
+				"del",
+				"deleteBtn"
+			],
+			[
+				"setT",
+				"setTimeout\t( handler: any, timeout?: long, arguments_..: any ): long Window"
+			],
+			[
+				"setI",
+				"setInterval\t( handler: any, timeout?: long, arguments_..: any ): long Window"
+			],
+			[
+				"studentI",
+				"studentId"
+			],
+			[
+				"thi",
+				"thisId"
+			],
+			[
+				"pare",
+				"parentElement\t: Element Node"
+			],
+			[
+				"click",
+				"onclick\t: EventHandler Document"
+			],
+			[
+				"tit",
+				"title"
+			],
+			[
+				"conta",
+				"container-fluid \tBootstrap 4 Class"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"break",
+				"break-all"
+			],
+			[
+				"wo",
+				"word-break\tproperty"
+			],
+			[
+				"sh",
+				"show"
+			],
+			[
+				"stu",
+				"studentId"
+			],
+			[
+				"add",
+				"addStudentBtn"
+			],
+			[
+				"ID",
+				"id\t: DOMString Element"
+			],
+			[
+				"cla",
+				"classList\t: DOMTokenList Element"
+			],
+			[
+				"att",
+				"attr"
+			],
+			[
+				"ap",
+				"appendChild\t( node: Node ): Node Node"
+			],
+			[
+				"cour",
+				"coursesNav"
+			],
+			[
+				"quer",
+				"querySelector\t( selectors: DOMString ): Element Document"
+			],
+			[
+				"cre",
+				"createElement\t( localName: DOMString ): Element Document"
+			],
+			[
+				"stude",
+				"studentRow"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"inc",
+				"incl\tinclude …"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"bo",
+				"border-right\tproperty"
+			],
+			[
+				"border-bottom-lef",
+				"border-bottom-left-radius\tproperty"
+			],
+			[
+				"col",
+				"color\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/opt/lampp/htdocs/john_bryce/playlist-app/index.html",
+			"settings":
+			{
+				"buffer_size": 5269,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/opt/lampp/htdocs/john_bryce/smsV1/assets/js/script.js",
+			"settings":
+			{
+				"buffer_size": 26994,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/js/script.js",
+			"settings":
+			{
+				"buffer_size": 7053,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/css/style.scss",
+			"settings":
+			{
+				"buffer_size": 3531,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/css/style.css",
+			"settings":
+			{
+				"buffer_size": 3781,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ht",
+				"HTMLBeautify"
+			],
+			[
+				"co",
+				"Color Picker"
+			],
+			[
+				"PHP Code Sniffer: ",
+				"PHP Code Sniffer: Sniff this file"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"ph",
+				"Set Syntax: PHP"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"cli",
+				"Angular CLI: generate component"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"be",
+				"Javascript Beautify"
+			],
+			[
+				"beu",
+				"Javascript Beautify"
+			],
+			[
+				"h",
+				"HTMLBeautify"
+			],
+			[
+				"ja",
+				"Javascript Beautify"
+			],
+			[
+				"javs",
+				"Javascript Beautify"
+			],
+			[
+				"ht\t",
+				"Snippet: help-text"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"a",
+				"Autoprefix CSS"
+			],
+			[
+				"colorp",
+				"Color Picker"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"cop",
+				"Color Picker"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"prefi",
+				"Autoprefix CSS"
+			],
+			[
+				"A",
+				"Autoprefix CSS"
+			],
+			[
+				"color pi",
+				"Package Control: Add Repository"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"brack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 461.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"which eslint",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"ll",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/opt/lampp/htdocs/john_bryce/playlist-app",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/api",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/assets",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/assets/css",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/assets/js"
+	],
+	"file_history":
+	[
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/school.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/assets/css/style.css",
+		"/opt/lampp/htdocs/john_bryce/ajax/blog/script.js",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/api/connect.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/config.php",
+		"/home/galp/.config/sublime-text-3/Packages/PHPGrammar/README.md",
+		"/home/galp/.config/sublime-text-3/Packages/User/phpcs.sublime-settings",
+		"/opt/lampp/htdocs/john_bryce/playlist-app/assets/css/style.css",
+		"/home/galp/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/galp/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/galp/.config/sublime-text-3/Packages/User/PHP.sublime-settings",
+		"/home/galp/Downloads/27645 (1)/playlist/api/playlist.php",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/servers/servers.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/server/server.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/server/server.component.css",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/servers/servers.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/server/server.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/forms/forms.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/table/table.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/form/form.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/form/form.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/forms/forms.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/for-loop/for-loop.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/table/table.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/pizza/pizza.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/pizza/pizza.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/for-loop/for-loop.component.html",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/app.module.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/forms/forms.component.spec.ts",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/header/header.component.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/header/header.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/server/server.component.spec.ts",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/test-comp/test-comp.component.ts",
+		"/home/galp/.config/sublime-text-3/Packages/Emmet/Default (Linux).sublime-keymap",
+		"/home/galp/webDev/angular_course/my-first-app/angular.json",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/app.component.ts",
+		"/home/galp/webDev/angular_course/my-first-app/src/app/app.component.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/index.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/header/header.component.css",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/form/form.component.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/table/table.component.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/app.component.html",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/app.component.ts",
+		"/home/galp/webDev/john_bryce/angular/test-v1-app/src/app/test-comp/test-comp.component.html",
+		"/home/galp/.config/sublime-text-3/Packages/CSS To Sass And Stylus Converter/css_to_sass.sublime-settings",
+		"/home/galp/webDev/john_bryce/es6/test.html",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/deleteUserHandler.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/editUser.php",
+		"/opt/lampp/htdocs/john_bryce/php/session/index.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/editStudent.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/addUserHandler.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/addStudentHandler.php",
+		"/opt/lampp/htdocs/john_bryce/ajax/imdb/index.html",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/adminHandler.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/header.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/schoolDBhandler.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/deleStudentHandler.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/coursesCheckbox.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/index.php",
+		"/opt/lampp/htdocs/john_bryce/smsV1/includes/handlers/removeFromCourseHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/smsV2Broken/assets/js/script.js",
+		"/opt/lampp/htdocs/john_bryce/phpProject/smsV2Broken/includes/handlers/removeFromCourseHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/smsV2Broken/includes/school.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/header.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/footer.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/assets/js/script.js",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/addStudentHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/coursesCheckbox.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/school.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/editStudent.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/removeFromCourseHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/editCourse.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/removeCourseHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/assets/css/style.css",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/uploadImgHandler.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/loginHandler.php",
+		"/opt/lampp/htdocs/john_bryce/ajax/blog/blog.html",
+		"/opt/lampp/htdocs/john_bryce/ajax/blog/add.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/index.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/login.php",
+		"/opt/lampp/htdocs/john_bryce/php/session/login.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/connect.php",
+		"/opt/lampp/htdocs/john_bryce/ajax/blog/blog.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/config.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/addCourseHandler.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/classes/Album.php",
+		"/home/galp/webDev/john_bryce/projects/note_board (2)/source/js/app.js",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/assets/css/style.scss",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/handlers/schoolDBhandler.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/nowPlayingBarContainer.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/classes/Course.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/assets/css/login.css",
+		"/opt/lampp/htdocs/php_course/slotify/assets/js/script.js",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/assets/js/script.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/edit.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/footer.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/table.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/index.php",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/classes/Account.php",
+		"/opt/lampp/htdocs/php_course/slotify/register.php",
+		"/opt/lampp/htdocs/php_course/slotify/assets/css/register.css",
+		"/opt/lampp/htdocs/john_bryce/phpProject/sms/includes/classes/Constants.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/classes/Account.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/classes/Constants.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/header.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/handlers/logHandler.php",
+		"/opt/lampp/htdocs/php_course/slotify/index.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/config.php",
+		"/opt/lampp/htdocs/php_course/slotify/includes/handlers/ajax/updatePlays.php",
+		"/opt/lampp/htdocs/php_course/slotify/assets/css/style.css",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/redirect.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/update.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/delete.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/add.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/add.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/index.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTestV2/getEmployee.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/getEmployee.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/update.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/index.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/delete.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/getAll.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/connect.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/add.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/page.php",
+		"/opt/lampp/htdocs/john_bryce/php/phpTest/som.php",
+		"/opt/lampp/htdocs/john_bryce/php/bookstore/delete.php",
+		"/opt/lampp/htdocs/php_course/slotify/album.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 145.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"t ",
+			"splice",
+			"whi",
+			"p",
+			"btn-secondery",
+			"delete",
+			"url",
+			"Url",
+			"url",
+			"song"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/opt/lampp/htdocs/john_bryce/playlist-app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3797,
+								3797
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ngx-html-syntax/NgxHTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1695.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/opt/lampp/htdocs/john_bryce/smsV1/assets/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26994,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12936,
+								12936
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8161.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7028,
+								7028
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4732.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/css/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3531,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2499,
+								2499
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3021.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/opt/lampp/htdocs/john_bryce/playlist-app/assets/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "palylist.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 139.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
