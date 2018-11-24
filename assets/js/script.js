@@ -4,7 +4,9 @@
 
 let count;
 let playlist;
+let updatedPlaylist;
 let library;
+let currentPlayingList = -1;
 const urlCol = $('.urlCol');
 const nameCol = $('.nameCol'); 
 
@@ -41,9 +43,8 @@ function getLibrary() {
         success: function(data) {
             // console.log("db response:", data);
             clearInput();
-        	library = JSON.parse(data);
+        	library = data;
     		displayLibrary(library);
-        	console.log(library);
         },
         error: function(error) {
             console.log("error : ", error);
@@ -60,8 +61,7 @@ function displayLibrary(lib) {
 	const libraryEl = $('.library');
 	$(libraryEl).empty();
 
-	for (var i = 0; i < lib.length; i++) {
-		console.log(libraryEl);
+	for (let i = 0; i < lib.length; i++) {
 
 		let playlistCol = document.createElement('div');
 		let playlistContainer = document.createElement('div');
@@ -105,10 +105,12 @@ function displayLibrary(lib) {
 		playlistArt.setAttribute('src', lib[i].image);
 		playlistTitle.textContent = lib[i].name;
 
-		deleteBtn.setAttribute("onclick", "deletePlaylist(this.id)");
+		deleteBtn.setAttribute("onclick", "deletePlaylistModal(this.id)");
 		editBtn.setAttribute("onclick", "updatePlaylistModel(this.id)");
 		editBtn.setAttribute("data-toggle", "modal");
 		editBtn.setAttribute("data-target", "#updateModal");
+		deleteBtn.setAttribute("data-toggle", "modal");
+		deleteBtn.setAttribute("data-target", "#deleteModal");
 
 		whiteHole.appendChild(playIcon);
 		deleteBtn.appendChild(deleteIcon);
@@ -190,10 +192,30 @@ $("#playlistImage").on('change keyup copy paste cut', function (){
 
 $('#toEditTracks').on('click', ()=>{
 	/* body... */
-	$('.phase').hide();
-	$('.phase-4').show();
+	updatedPlaylist = new Object;
+	let checkImage = $('#imageToUpdate').val();
 
+	if ($('#imageToUpdate').val() != '' && $('#playlistNewName').val() != '' ) {
+		if(checkImage.includes(".png") || checkImage.includes(".jpeg") || checkImage.includes(".jpg")) {
+			$('.phase').hide();
+			$('.phase-4').show();
+
+			updatedPlaylist.title = $('#playlistNewName').val();
+			updatedPlaylist.image = $('#imageToUpdate').val();		
+			updatedPlaylist.id = $('#playlistId').val();		
+		} else {
+			console.log(checkImage);
+		}
+	}
 });
+
+$('#updatePlaylist').on('click', ()=> {
+	/* body... */
+	updatePlaylist();
+	clearInput();
+	getLibrary();
+});
+
 $("#imageToUpdate").on('change keyup copy paste cut', function (){
     //!this.value ...
     console.log($(this).val());
@@ -209,16 +231,51 @@ $('#addNewRow').on('click', ()=> {
 
 
 $('#playPause').on('click', ()=> {
-	let toggleBtn = $('#playPause').find('i');
-	$(toggleBtn).toggleClass('fa-pause fa-play');
-	$('#playCover').toggleClass('spin');
-	
+	tooglePlay();
 });
+
 
 $('#search').on('change keyup copy paste cut', ()=> {
 	searchResults();
 
-})
+});
+
+$('#audioPlayer').on('play', ()=>{
+		let toggleBtn = $('#playPause').find('i');
+		$(toggleBtn).removeClass('fa-play');
+		$(toggleBtn).addClass('fa-pause');
+		$('#playCover').addClass('spin');	
+
+});
+
+$('#audioPlayer').on('pause', ()=>{
+		let toggleBtn = $('#playPause').find('i');
+		$(toggleBtn).removeClass('fa-pause');
+		$(toggleBtn).addClass('fa-play');
+		$('#playCover').removeClass('spin');	
+
+});
+$('#closePlayerBtn').on('click', ()=>{
+	closePlaylist();
+});
+function tooglePlay(){
+	let playerState = document.getElementById('audioPlayer').paused;
+	let toggleBtn = $('#playPause').find('i');
+	if (!playerState) {
+		$(toggleBtn).removeClass('fa-pause');
+		$(toggleBtn).addClass('fa-play');
+		$('#playCover').toggleClass('spin');	
+		$('#audioPlayer').get(0).pause();
+		play = !play;
+	} else {
+		$('#audioPlayer').get(0).play();
+		play = !play;
+		$(toggleBtn).toggleClass('fa-pause fa-play');
+		$('#playCover').toggleClass('spin');
+		$(toggleBtn).removeClass('fa-play');
+		$(toggleBtn).addClass('fa-pause');
+	}
+}
 
 
 //----------------------//
@@ -232,17 +289,17 @@ function initSongPicker(trackCount) {
 	urlCol.empty();
 	nameCol.empty();
 	if (trackCount != undefined) {
-		for (var i = 0; i < trackCount; i++) {
+		for (let i = 0; i < trackCount; i++) {
 			let trackId = document.createElement('input');
 			trackId.setAttribute('type', 'hidden');
 			trackId.setAttribute('name', 'trackId-' + i);
-			console.log(trackId);
+			trackId.classList.add('ids');
 			appendSongPicker(i,trackId);
 			count = trackCount;
 		}		
 	} else {		
 		count = 4;
-		for (var i = 0; i < count; i++) {
+		for (let i = 0; i < count; i++) {
 			appendSongPicker(i, undefined);
 		}
 	}
@@ -294,9 +351,9 @@ function appendSongPicker(i, trackId) {
 function createPlaylist() {
 	// body...
 	playlist.tracks = [];
-	let unsortedTracksUrls = $('.urls');
-	let unsortedTracksNames = $('.names');
-	for (var i = 0; i < unsortedTracksUrls.length; i++) {
+	let unsortedTracksUrls = $('.phase-2 .urls');
+	let unsortedTracksNames = $('.phase-2 .names');
+	for (let i = 0; i < unsortedTracksUrls.length; i++) {
 		if (unsortedTracksUrls[i].value.length != 0) {	
 			let track = new Object();
 			let type = '.mp3';
@@ -349,16 +406,23 @@ function addPlaylist(playlist) {
 //----------------------//
 //delete from DB and update library
 //----------------------//
+function deletePlaylistModal(t){
+	let deleteId = t.slice(2);
+	$('#toDelId').val(deleteId);
+}
+
+$('#deletePlaylist').on('click', ()=>{
+	let toDelList =  $('#toDelId').val();
+	deletePlaylist(toDelList);
+});
 
 function deletePlaylist(t) {
     
 	const url = 'api/delete.php'
-	let deleteId = t.slice(2);
-	console.log(deleteId);
+	let deleteId = t;
     let toDelete = {
     	id: deleteId,
     };
-
     $.ajax({
         type: 'POST',
         datatype: 'json',
@@ -368,6 +432,9 @@ function deletePlaylist(t) {
             console.log("db response:", data);
         	clearInput();
 			getLibrary();
+			if (toDelete.id == currentPlayingList) {
+				closePlaylist();	
+			}
 
         },
         error: function(error) {
@@ -383,11 +450,10 @@ function deletePlaylist(t) {
 //----------------------//
 
 function updatePlaylistModel(t) {
-	const url = 'api/update.php'
 	let editId = t.slice(2);
 	console.log(editId);
 	let playlistToEdit;
-	for (var i = 0; i < library.length; i++) {
+	for (let i = 0; i < library.length; i++) {
 		if (library[i].id == editId) {
 			playlistToEdit = library[i];
 			displayEditModal(playlistToEdit);
@@ -406,7 +472,7 @@ function displayEditModal(edit) {
     $('.toUpload').attr('src', $('#imageToUpdate').val());
 	$('#playlistId').val(edit.id);
 
-	for (var i = 0; i < edit[3].length; i++) {
+	for (let i = 0; i < edit[3].length; i++) {
 		let trackUrl = 'newUrl-' + (i + 1);
 		let trackName = 'newName-' + (i + 1);
 		let songId = 'trackId-' + i;
@@ -420,7 +486,70 @@ function displayEditModal(edit) {
 
 }
 
+function updatePlaylist() {
+	updatedPlaylist.tracks = [];
 
+	let unsortedTracksUrls = $('.phase-4 .urls');
+	let unsortedTracksNames = $('.phase-4 .names');
+	let unsortedTracksIds = $('.phase-4 .ids');
+	
+	for (let i = 0; i < unsortedTracksUrls.length; i++) {
+		
+		if (unsortedTracksUrls[i].value.length != 0) {	
+			let track = new Object();
+			let type = '.mp3';
+
+			track.url = unsortedTracksUrls[i].value;
+			
+			let endsValid = track.url.endsWith(type);
+			if (endsValid) {
+				if (unsortedTracksNames[i].value.length != 0) {
+					track.name = unsortedTracksNames[i].value;
+					if (typeof unsortedTracksIds[i] != 'undefined') {
+						track.id = unsortedTracksIds[i].value;		
+					}	
+						updatedPlaylist.tracks.push(track);
+				}
+			} else {
+				console.log(track.url + ' not Valid format');
+			}
+		}
+	}
+	updateDB(updatedPlaylist);
+}
+
+function updateDB(playlist) {
+	const url = 'api/update.php';
+    let playlistToUpdate = {
+		name: playlist.title,
+		image: playlist.image,
+		id: playlist.id,
+		tracks: playlist.tracks 
+	}
+	console.log(playlistToUpdate);
+	$.ajax({
+        type: 'POST',
+        datatype: 'json',
+        url: url,
+        data: playlistToUpdate,
+        success: function(data) {
+            console.log("db response:", data);
+        	clearInput();
+        	getLibrary();
+        	let updatePlayer;
+      
+        	updatePlayer = setTimeout(()=>{
+        		initPlayer(playlistToUpdate.id)
+        		} , 500);
+        		
+        	
+
+        },
+        error: function(error) {
+            console.log("error : ", error);
+        }
+    });
+}
 
 //----------------------//
 //Player functions
@@ -430,21 +559,35 @@ function displayEditModal(edit) {
 function playlistHandler(t) {
 	$('#playCover').removeClass('spin');
 	$('.playerContainer').show('slow');
+	$('.playlistContainer').css('opacity', '0.75');
+	$('#' + t).parent().css('opacity', '1');
 	$('#playCover').addClass('spin');
+
 	let toggleBtn = $('#playPause').find('i');
 	$(toggleBtn).removeClass('fa-play');
 	$(toggleBtn).addClass('fa-pause');
+
+	let playId = t.slice(2);
+	currentPlayingList = playId;
+	
+	$('.editCurrentBtn').attr('id', 'c-' + playId);	
+	$('.editCurrentBtn').attr('onclick', 'updatePlaylistModel(this.id)');
+
+	$('.deleteCurrentBtn').attr('id', 'r-' + playId);	
+	$('.deleteCurrentBtn').attr('onclick', 'deletePlaylistModal(this.id)');	
+
+
 	fixPosition();
-	initPlayer(t);
+	initAudio(playId);
+	initPlayer(playId);
 }
 
 function initPlayer(t) {
 	// body...
-	let playId = t.slice(2);
-	console.log(playId);
+	console.log(t);
 
-	for (var i = 0; i < library.length; i++) {
-		if (library[i].id == playId) {
+	for (let i = 0; i < library.length; i++) {
+		if (library[i].id == t) {
 			let trackList = $('#trackList');
 			let playTracks = library[i][3];
 			document.title = library[i].name;
@@ -457,17 +600,12 @@ function initPlayer(t) {
 				let trackLi = document.createElement('li');
 				trackLi.textContent = el.name;
 				trackLi.id = 't-' + el.id;
-				trackLi.setAttribute('onclick', 'playTrack(this.id)');
+				trackLi.setAttribute('onclick', 'playThis(this.id)');
 				trackLi.classList.add('track-item');
-				trackList.append(trackLi);
-
-
-
 				if (index == 0) {
-					$('#trackPlayer').attr('src', el.url);
-					let tr = $('#trackPlayer');
-					audioHandler(tr);
+					trackLi.classList.add('active');
 				}
+				trackList.append(trackLi);
 			});
 		}
 	}
@@ -475,20 +613,62 @@ function initPlayer(t) {
 
 
 //AUDIO FUNCTIONS
-function audioHandler(track) {
-	// body...
-	$(track).on('loadedmetadata', ()=> {
-		console.log(track.duration);
-	});
-	// $('.duration').text(duration);
+let currentPlaylist;
+let trackNum = 0;
+let trackList;
+let toPlay;
+let playingId;
+let play = true;
+
+function initAudio(toPlaylist) {
+	trackNum = 0;
+	for (let i = 0; i < library.length; i++) {
+		if(library[i].id == toPlaylist){
+			currentPlaylist = library[i];
+		}
+	}
+	trackList = currentPlaylist[3];
+	toPlay = trackList[trackNum].url;
+	playTrack(toPlay);
 }
 
-function playTrack(t) {
-	let toPlay = t.slice(2);
-	console.log(toPlay);
+$('#audioPlayer').on('ended', ()=>{
+	trackNum ++;
+	toPlay = trackList[trackNum].url;
+	playingId = trackList[trackNum].id;
+	console.log(playingId);
+	$('.track-item').removeClass('active');
+	$('#t-' + playingId).addClass('active');
+	if (trackNum < trackList.length) {
+		// statement			
+		playTrack(toPlay);
+	}
+});
+
+function playThis(t){
+	$('.track-item').removeClass('active');
+	$('#'+t).addClass('active');
+	let thisId = t.slice(2);
+	for (let i = 0; i < trackList.length; i++) {
+		if(trackList[i].id == thisId){
+			trackNum = i;
+			// tooglePlay();
+			playTrack(trackList[i].url);
+		}
+	}
 }
 
+function playTrack(curr) {
+	$('#audioPlayer').attr('src', curr);
+	$('#audioPlayer').get(0).play();
+}
 
+function closePlaylist() {
+	$('.playerContainer').hide('slow');
+	$('.playlistContainer').css('opacity', '0.75');
+	document.getElementById('audioPlayer').pause();
+	unFixPosition();
+}
 //SEARCH FUNCTION
 function searchResults() {
 	// body...
@@ -498,7 +678,7 @@ function searchResults() {
 	let str = $('#search').val();
 
 	if (str.length > 2) {
-		for (var i = 0; i < library.length; i++) {
+		for (let i = 0; i < library.length; i++) {
 			let playName = library[i].name;
 			let isStart = playName.startsWith(str);
 			if (isStart) {
@@ -508,7 +688,7 @@ function searchResults() {
 		}
 	}
 	if (matches.length > 0) {
-		for (var i = 0; i < matches.length; i++) {
+		for (let i = 0; i < matches.length; i++) {
 			displayLibrary(matches);
 		}
 	} else {
@@ -534,3 +714,10 @@ function fixPosition() {
 	$('.playerNest').addClass('fixed-player');
 	$('.libraryContainer').css('padding-top', '18%');
 }
+
+function unFixPosition() {
+	$('.playerNest').removeClass('fixed-top');
+	$('.playerNest').removeClass('fixed-player');
+	$('.libraryContainer').css('padding-top', '0');
+}
+

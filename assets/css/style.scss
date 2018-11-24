@@ -79,7 +79,34 @@ body {
 	margin-top: 65.7333px;
 }
 
+.closeBtn {
+	float: right;
+	border: none;
+	background-color: transparent;
+	color: #f60c0c;
+	font-size: 36px;
+    cursor: pointer;
+	z-index: 1031;
+    position: fixed;
+    right: 14px;
+}
 
+.currentPlaylistBtn {
+	width: 5%;
+    position: fixed;
+    right: 18%;
+    top: 18%;
+    height: 15%;
+    cursor: pointer;
+    z-index: 1031;
+
+    button {
+    	margin-top: 15%;
+   	 	border-radius: 50%;
+    	width: 80%;
+    	height: 50%;
+    }
+}
 
 .player {
 	height: 200px;
@@ -111,40 +138,53 @@ body {
     	color: #323232;
 		.playlistSongs {
 
-			ul {
-			  list-style: none;
+			ol {
 			  direction: rtl;
 			  max-height: 65px;
 			  padding: 0;
 			  overflow: auto;
 			  // overflow: hidden;
+			  counter-reset: item;
 
 			}
 
 			li {
+			  list-style: none;
 			  direction: ltr;
-			  padding-left: 1.3em;  
+			  padding-left: 0.5em;  
 			  position: relative;
 			  z-index: 10; 
 			  margin: 0;
 			  max-height: 20px; 
 	          padding-bottom: 25px;
-			  width: 70%;
-              right: 30%;
+			  width: 60%;
+              right: 35%;
 			}
-
-			li:hover {
-		      background-color: #989898;
-			}
-
 			li:before {
+  				content: counter(item)". ";
+				counter-increment: item;
+			}
+
+			li:hover,
+			li.active {
+			  list-style: none;
+			  cursor: pointer;
+		      background-color: #989898;
+	          border-top-right-radius: 25px;
+    		  border-bottom-right-radius: 25px;
+			}
+
+			li:hover:before,
+			li.active:before {
 			   font-family: "Font Awesome 5 Free";
 	   		   content: "\f04b";
 			   display: inline-block;
 			   padding-right: 3px;
 			   vertical-align: middle;
 			   font-weight: 900;
+
 			}
+
 		}
     }
 
@@ -192,10 +232,26 @@ body {
 }
 .playlistContainer {
 	opacity: 0.75;
+
+	.btnContainer,
+	button,
+	i{
+		opacity: 0;
+	}
+
+
 }
 
+
 .playlistContainer:hover {
-	opacity: 1.00;
+	opacity: 1.00 !important;
+	
+	.btnContainer,
+	button,
+	i{
+		opacity: 1;
+	}
+
 }
 
 .btnContainer {

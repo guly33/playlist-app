@@ -21,12 +21,12 @@
 				if(isset($track['id'])) {								
 					$trackId = $track['id'];				
 					$query = mysqli_query($con, "UPDATE tracks SET name='$trackName', url='$trackUrl', playlist_id='$id' WHERE id='$trackId'");				
+					echo json_encode($trackId);
 				}else {
 					$trackQuery = mysqli_query($con, "INSERT INTO `tracks`(`name`, `url`, `playlist_id`) VALUES ('$trackName','$trackUrl', '$id') ") or die("Unable to Connect, sorry :D");  
 				}
 			}
 		}
 
-		echo json_encode('1');
 	}
  ?>

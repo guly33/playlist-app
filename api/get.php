@@ -1,4 +1,6 @@
 <?php
+	header("Access-Control-Allow-Origin: *");
+	header('Content-Type: application/json');
 	include 'connect.php';
 	if(isset($_POST['get'])) {
 	$playlistArr = array();
@@ -22,6 +24,6 @@
 		 }					
 		
 		}
-		echo json_encode($playlistArr);
 	}
-?>	
+			echo json_encode($playlistArr);
+?>
