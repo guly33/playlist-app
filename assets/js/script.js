@@ -17,6 +17,8 @@ const nameCol = $('.nameCol');
 $(document).ready(function () {
 	/* body... */
 	$('.playerContainer').hide();
+	$('.alertAjaxErr').hide();
+	$('.alertAjaxSuc').hide();
 	clearInput();
 	getLibrary();
 });
@@ -48,6 +50,7 @@ function getLibrary() {
         },
         error: function(error) {
             console.log("error : ", error);
+            alertSet('fail');
         }
     });
 
@@ -151,8 +154,10 @@ $('#addPlaylist').on('click', ()=>{
 
 $('#toAddTracks').on('click', ()=>{
 	/* body... */
-	let checkImage = $('#playlistImage').val();
+	$('#playlistName').css('border-color', '');
+	$('#playlistImage').css('border-color', '');
 
+	let checkImage = $('#playlistImage').val();
 	if ($('#playlistImage').val() != '' && $('#playlistName').val() != '' ) {
 		if(checkImage.includes(".png") || checkImage.includes(".jpeg") || checkImage.includes(".jpg")) {
 			$('.phase').hide();
@@ -162,7 +167,15 @@ $('#toAddTracks').on('click', ()=>{
 			playlist.title = $('#playlistName').val();
 			playlist.image = $('#playlistImage').val();		
 		} else {
-			console.log(checkImage);
+			$('#playlistImage').css('border-color', 'red');
+		}
+	} else {
+		if ($('#playlistName').val() == '') {
+			console.log('#playlistName');
+			$('#playlistName').css('border-color', 'red');
+		}
+		if ($('#playlistImage').val() == '') {
+			$('#playlistImage').css('border-color', 'red');
 		}
 	}
 });
@@ -170,9 +183,7 @@ $('#toAddTracks').on('click', ()=>{
 
 $('#savePlaylist').on('click', ()=> {
 	/* body... */
-	createPlaylist();
-	clearInput();
-	getLibrary();
+	createPlaylist();	
 });
 
 $('#addRow').on('click', ()=> {
@@ -212,8 +223,7 @@ $('#toEditTracks').on('click', ()=>{
 $('#updatePlaylist').on('click', ()=> {
 	/* body... */
 	updatePlaylist();
-	clearInput();
-	getLibrary();
+	
 });
 
 $("#imageToUpdate").on('change keyup copy paste cut', function (){
@@ -351,30 +361,70 @@ function appendSongPicker(i, trackId) {
 function createPlaylist() {
 	// body...
 	playlist.tracks = [];
+	let unValidArr = [];
+	let emptyCount = 0;
 	let unsortedTracksUrls = $('.phase-2 .urls');
 	let unsortedTracksNames = $('.phase-2 .names');
+
 	for (let i = 0; i < unsortedTracksUrls.length; i++) {
 		if (unsortedTracksUrls[i].value.length != 0) {	
 			let track = new Object();
 			let type = '.mp3';
+			$(unsortedTracksUrls[i]).css('border-color', '');
 
 			track.url = unsortedTracksUrls[i].value;
-			
-			let endsValid = track.url.endsWith(type);
+			let endsValid = track.url.includes(type);	
 			if (endsValid) {
 				if (unsortedTracksNames[i].value.length != 0) {
+					$(unsortedTracksNames[i]).css('border-color', '');
 					track.name = unsortedTracksNames[i].value;	
 					console.log(track.name);
 					playlist.tracks.push(track);
 					console.log(track);
+				} else {
+					$(unsortedTracksNames[i]).css('border-color', 'red');
+					return;
 				}
 			} else {
 				console.log(track.url + ' not Valid format');
+				console.log(track.url + 'not Valid format');
+				$(unsortedTracksNames[i]).css('border-color', 'red');
+
+				unValidArr.push(track);
+			}
+		} else {
+			emptyCount ++;
+			if (unsortedTracksNames[i].value != '') {
+				$(unsortedTracksUrls[i]).css('border-color', 'red');
+				return;
+			}
+
+		}
+	}
+	if (emptyCount == unsortedTracksUrls.length) {
+		console.log('no track');
+		return;
+	} else {
+			
+		if (unValidArr.length > 0 && playlist.tracks.length < 1) {
+			console.log(unValidArr);
+			markUnvalid(unsortedTracksUrls, unValidArr);
+			return;
+		} else {
+			if (unValidArr.length > 0) {
+				console.log(unValidArr);
+				markUnvalid(unsortedTracksUrls, unValidArr);
+				return;
+			} else {	
+				$('#addPlaylistModal').modal('toggle');
+				addPlaylist(playlist);
+				clearInput();
+				getLibrary();	
 			}
 		}
 	}
-	addPlaylist(playlist);
 }
+
 
 //Add to DB
 function addPlaylist(playlist) {
@@ -393,9 +443,11 @@ function addPlaylist(playlist) {
         data: playlistToAdd,
         success: function(data) {
             console.log("db response:", data);
+            alertSet('success');
         },
         error: function(error) {
             console.log("error : ", error);
+            alertSet('fail');
         }
     });
 
@@ -430,6 +482,7 @@ function deletePlaylist(t) {
         data: toDelete,
         success: function(data) {
             console.log("db response:", data);
+            alertSet('success');
         	clearInput();
 			getLibrary();
 			if (toDelete.id == currentPlayingList) {
@@ -439,6 +492,7 @@ function deletePlaylist(t) {
         },
         error: function(error) {
             console.log("error : ", error);
+            alertSet('fail');
         }
     });
 
@@ -492,30 +546,73 @@ function updatePlaylist() {
 	let unsortedTracksUrls = $('.phase-4 .urls');
 	let unsortedTracksNames = $('.phase-4 .names');
 	let unsortedTracksIds = $('.phase-4 .ids');
-	
+	let emptyCount = 0;	
+	let unValidArr = [];
+	let toRemoveArr = [];
 	for (let i = 0; i < unsortedTracksUrls.length; i++) {
-		
+		console.log(unsortedTracksUrls.length);
 		if (unsortedTracksUrls[i].value.length != 0) {	
 			let track = new Object();
 			let type = '.mp3';
+			$(unsortedTracksUrls[i]).css('border-color', '');
 
 			track.url = unsortedTracksUrls[i].value;
 			
-			let endsValid = track.url.endsWith(type);
+			let endsValid = track.url.includes(type);
+			console.log(endsValid);
 			if (endsValid) {
 				if (unsortedTracksNames[i].value.length != 0) {
+					$(unsortedTracksNames[i]).css('border-color', '');
 					track.name = unsortedTracksNames[i].value;
 					if (typeof unsortedTracksIds[i] != 'undefined') {
 						track.id = unsortedTracksIds[i].value;		
 					}	
 						updatedPlaylist.tracks.push(track);
+				} else {
+					$(unsortedTracksNames[i]).css('border-color', 'red');
+					return;
 				}
 			} else {
-				console.log(track.url + ' not Valid format');
+				console.log(track.url + 'not Valid format');
+				unValidArr.push(track);
+			}
+		} else {
+			if(unsortedTracksUrls[i].value.length == 0 && typeof unsortedTracksIds[i] != 'undefined'){
+				toRemoveArr.push(unsortedTracksIds[i].value);
+				console.log(toRemoveArr);
+			} else {
+				if (unsortedTracksNames[i].value != 0) {	
+					$(unsortedTracksUrls[i]).css('border-color', 'red');
+					return;
+				}
 			}
 		}
 	}
-	updateDB(updatedPlaylist);
+	if (toRemoveArr.length > 0) {	
+		updatedPlaylist.toRem = toRemoveArr;
+		console.log(updatedPlaylist.toRem);
+	}
+		if (emptyCount == unsortedTracksUrls.length) {
+			console.log('no track');
+			return;
+		} else {
+				
+			if (unValidArr.length > 0 && updatedPlaylist.tracks.length < 1) {
+				console.log(unValidArr);
+				markUnvalid(unsortedTracksUrls, unValidArr);
+				return;
+			} else {
+				if (unValidArr.length > 0) {
+					console.log(unValidArr);
+					markUnvalid(unsortedTracksUrls, unValidArr);
+					return;
+				} else {
+					console.log(unValidArr);
+					$('#updateModal').modal('toggle');
+					updateDB(updatedPlaylist);							
+				}
+			}
+		}
 }
 
 function updateDB(playlist) {
@@ -524,7 +621,8 @@ function updateDB(playlist) {
 		name: playlist.title,
 		image: playlist.image,
 		id: playlist.id,
-		tracks: playlist.tracks 
+		tracks: playlist.tracks,
+		toDelete: playlist.toRem
 	}
 	console.log(playlistToUpdate);
 	$.ajax({
@@ -534,19 +632,27 @@ function updateDB(playlist) {
         data: playlistToUpdate,
         success: function(data) {
             console.log("db response:", data);
+            alertSet('success');
         	clearInput();
         	getLibrary();
         	let updatePlayer;
       
         	updatePlayer = setTimeout(()=>{
-        		initPlayer(playlistToUpdate.id)
-        		} , 500);
+        		initPlayer(playlistToUpdate.id);
+        		if (typeof currentPlaylist != 'undefined') {    			
+	        		if (currentPlaylist.id == playlistToUpdate.id) {
+						playlistHandler('c-' + playlistToUpdate.id);	
+	        			}
+        		}
+
+        		} , 2000);
         		
         	
 
         },
         error: function(error) {
             console.log("error : ", error);
+            alertSet('fail');
         }
     });
 }
@@ -629,7 +735,10 @@ function initAudio(toPlaylist) {
 	}
 	trackList = currentPlaylist[3];
 	toPlay = trackList[trackNum].url;
-	playTrack(toPlay);
+	if (playingId != trackList[trackNum].id) {
+		playingId = trackList[trackNum].id;
+		playTrack(toPlay);	
+	}
 }
 
 $('#audioPlayer').on('ended', ()=>{
@@ -721,3 +830,34 @@ function unFixPosition() {
 	$('.libraryContainer').css('padding-top', '0');
 }
 
+function markUnvalid(unsorted, unValid){
+	for (let i = 0; i < unsorted.length; i++) {
+		if (unsorted[i].value.length != 0) {	
+			unValid.forEach( function(el, index) {
+				// statements
+				$(unsorted[i]).css('border-color', '');
+				if (unsorted[i].value == el.url) {
+					$(unsorted[i]).css('border-color', 'red');
+				}
+			});
+		}
+	}
+}
+
+function alertSet(type){
+	if (type == 'fail') {	
+	    $(".alertAjaxErr").show("slow");
+	    setTimeout(function() {
+	        /* body... */
+	        $(".alertAjaxErr").hide("slow");
+	    }, 5000);
+	}
+
+	if (type == 'success') {
+	    $(".alertAjaxSuc").show("slow");
+		    setTimeout(function() {
+		        /* body... */
+		        $(".alertAjaxSuc").hide("slow");
+	    }, 5000);	
+	}
+}

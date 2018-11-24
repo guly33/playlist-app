@@ -24,7 +24,7 @@
 			}
 										
 		}
-		echo json_encode($playlistId);
+		echo json_encode('1');
 	}
 	
 

@@ -35,6 +35,14 @@ body {
   .addContainer button:hover {
     cursor: pointer; }
 
+.alertContainer {
+  width: 45%;
+  margin: auto;
+  position: fixed;
+  left: 25%; }
+  .alertContainer div {
+    text-align: center; }
+
 .searchContainer {
   float: right; }
   .searchContainer .searchGroup {

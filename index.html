@@ -16,6 +16,14 @@
 				<i class="fas fa-plus-circle"></i>הוסף רשימת השמעה
 				</button>
 			</div>
+			<div class="alertContainer">
+				<div class="alert alert-danger alertAjaxErr" role="alert">
+				  Oppps somthing want wrong! please try again.
+				</div>
+				<div class="alert alert-success alertAjaxSuc" role="alert">
+				  Task was successful!
+				</div>
+			</div>
 			<div class="searchContainer navItems">
 				<div class="form-group searchGroup">
 					<i class="fas fa-search"></i>
@@ -70,7 +78,7 @@
 						</div>
 						<div class="phase phase-2">
 							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary" id="savePlaylist" data-dismiss="modal">Save</button>
+							<button type="button" class="btn btn-primary" id="savePlaylist">Save</button>
 						</div>
 					</div>
 				</div>
@@ -124,7 +132,7 @@
 				</div>
 				<div class="phase phase-4">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" id="updatePlaylist">Save Changes</button>
+					<button type="button" class="btn btn-primary" id="updatePlaylist">Save Changes</button>
 				</div>
 		      </div>
 		    </div>

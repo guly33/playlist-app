@@ -48,7 +48,16 @@ body {
 		cursor: pointer;
 	}
 }
+.alertContainer {
+	width: 45%;
+	margin: auto;
+	position: fixed;
+	left: 25%;
 
+	div {
+		text-align: center;
+	}
+}
 .searchContainer {
 	float: right;
 
