@@ -2,6 +2,7 @@
 //GLOBALS
 //--------------//
 
+//playlist globals
 let count;
 let playlist;
 let updatedPlaylist;
@@ -10,8 +11,13 @@ let currentPlayingList = -1;
 const urlCol = $('.urlCol');
 const nameCol = $('.nameCol'); 
 
-
-
+//player globals
+let currentPlaylist;
+let trackNum = 0;
+let trackList;
+let toPlay;
+let playingId;
+let play = true;
 
 
 $(document).ready(function () {
@@ -239,15 +245,9 @@ $('#addNewRow').on('click', ()=> {
 
 
 
-
+// PLAYER HANDLERS
 $('#playPause').on('click', ()=> {
 	tooglePlay();
-});
-
-
-$('#search').on('change keyup copy paste cut', ()=> {
-	searchResults();
-
 });
 
 $('#audioPlayer').on('play', ()=>{
@@ -268,25 +268,13 @@ $('#audioPlayer').on('pause', ()=>{
 $('#closePlayerBtn').on('click', ()=>{
 	closePlaylist();
 });
-function tooglePlay(){
-	let playerState = document.getElementById('audioPlayer').paused;
-	let toggleBtn = $('#playPause').find('i');
-	if (!playerState) {
-		$(toggleBtn).removeClass('fa-pause');
-		$(toggleBtn).addClass('fa-play');
-		$('#playCover').toggleClass('spin');	
-		$('#audioPlayer').get(0).pause();
-		play = !play;
-	} else {
-		$('#audioPlayer').get(0).play();
-		play = !play;
-		$(toggleBtn).toggleClass('fa-pause fa-play');
-		$('#playCover').toggleClass('spin');
-		$(toggleBtn).removeClass('fa-play');
-		$(toggleBtn).addClass('fa-pause');
-	}
-}
 
+
+//SEARCH HANDLERS
+$('#search').on('change keyup copy paste cut', ()=> {
+	searchResults();
+
+});
 
 //----------------------//
 //ADD PLAYLIST FUNCUNALITY
@@ -661,6 +649,26 @@ function updateDB(playlist) {
 //Player functions
 //----------------------//
 
+function tooglePlay(){
+	let playerState = document.getElementById('audioPlayer').paused;
+	let toggleBtn = $('#playPause').find('i');
+	if (!playerState) {
+		$(toggleBtn).removeClass('fa-pause');
+		$(toggleBtn).addClass('fa-play');
+		$('#playCover').toggleClass('spin');	
+		$('#audioPlayer').get(0).pause();
+		play = !play;
+	} else {
+		$('#audioPlayer').get(0).play();
+		play = !play;
+		$(toggleBtn).toggleClass('fa-pause fa-play');
+		$('#playCover').toggleClass('spin');
+		$(toggleBtn).removeClass('fa-play');
+		$(toggleBtn).addClass('fa-pause');
+	}
+}
+
+
 
 function playlistHandler(t) {
 	$('#playCover').removeClass('spin');
@@ -719,12 +727,7 @@ function initPlayer(t) {
 
 
 //AUDIO FUNCTIONS
-let currentPlaylist;
-let trackNum = 0;
-let trackList;
-let toPlay;
-let playingId;
-let play = true;
+
 
 function initAudio(toPlaylist) {
 	trackNum = 0;
@@ -778,6 +781,8 @@ function closePlaylist() {
 	document.getElementById('audioPlayer').pause();
 	unFixPosition();
 }
+
+
 //SEARCH FUNCTION
 function searchResults() {
 	// body...

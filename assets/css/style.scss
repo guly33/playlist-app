@@ -1,5 +1,6 @@
 
 /*GENERAL*/
+
 $navtextColor: #323232;
 body {
 	margin:	0;
@@ -8,6 +9,9 @@ body {
 	min-height: 700px;
     font-family: 'Lora', serif;
 }
+
+/*MODALS*/
+
 .modal-dialog {
 	margin-top: 5%;
     margin-left: 21%;
@@ -21,6 +25,13 @@ body {
 		width: 75%;
 	}
 }
+.toUpload {
+	width: 100%;
+    border-radius: 50%;
+}
+
+/*NAV*/
+
 .navItems {
 	width: 30%;	
 }
@@ -79,11 +90,9 @@ body {
 }
 
 
-.toUpload {
-	width: 100%;
-    border-radius: 50%;
-}
-
+/***********/
+/*MAIN APP*/
+/**********/
 .main-app {
 	margin-top: 65.7333px;
 }
@@ -116,6 +125,8 @@ body {
     	height: 50%;
     }
 }
+
+/*PLAYER*/
 
 .player {
 	height: 200px;
@@ -229,12 +240,27 @@ body {
 	    }
 	}
 }
+.spin {
+	position: absolute;
+    z-index: 0;
+    width: 82%;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 2s linear infinite;
+
+}
+.fixed-player {
+	top: 54px !important;
+	background-color: #fff6;
+	padding: 2% 0;
+}
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
+/*LIBRARY*/
 
 .playlistCol {
 	margin-top: 5%;
@@ -319,15 +345,7 @@ body {
 	}	
 }
 
-.spin {
-	position: absolute;
-    z-index: 0;
-    width: 82%;
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 2s linear infinite;
 
-}
 
 
 .playlistTitle {
@@ -358,8 +376,3 @@ body {
       }
 }
  
-.fixed-player {
-	top: 54px !important;
-	background-color: #fff6;
-	padding: 2% 0;
-}
