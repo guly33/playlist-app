@@ -25,6 +25,7 @@ $(document).ready(function () {
 	$('.playerContainer').hide();
 	$('.alertAjaxErr').hide();
 	$('.alertAjaxSuc').hide();
+	$('#typeAlert').hide();
 	clearInput();
 	getLibrary();
 });
@@ -377,6 +378,7 @@ function createPlaylist() {
 				console.log(track.url + ' not Valid format');
 				console.log(track.url + 'not Valid format');
 				$(unsortedTracksNames[i]).css('border-color', 'red');
+				alertSet('format');
 
 				unValidArr.push(track);
 			}
@@ -562,7 +564,9 @@ function updatePlaylist() {
 				}
 			} else {
 				console.log(track.url + 'not Valid format');
+				alertSet('format');
 				unValidArr.push(track);
+				return;
 			}
 		} else {
 			if(unsortedTracksUrls[i].value.length == 0 && typeof unsortedTracksIds[i] != 'undefined'){
@@ -863,6 +867,13 @@ function alertSet(type){
 		    setTimeout(function() {
 		        /* body... */
 		        $(".alertAjaxSuc").hide("slow");
+	    }, 5000);	
+	}
+	if (type == 'format') {
+		$('#typeAlert').show('slow');
+	    setTimeout(function() {
+		        /* body... */
+		        $("#typeAlert").hide("slow");
 	    }, 5000);	
 	}
 }

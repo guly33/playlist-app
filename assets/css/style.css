@@ -21,6 +21,10 @@ body {
   width: 100%;
   border-radius: 50%; }
 
+#typeAlert {
+  color: red;
+  margin-left: 20%; }
+
 /*NAV*/
 .navItems {
   width: 30%; }
